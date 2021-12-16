@@ -1,5 +1,6 @@
 package com.example.headsupprep.Model
 
+
 class CelebrityGame {
 
     var pk: Int? = null

@@ -52,8 +52,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("id", searcher)
             startActivity(intent)
         }
-
-
     }
 
     private fun loadRV(){

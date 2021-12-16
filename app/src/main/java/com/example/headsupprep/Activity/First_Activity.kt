@@ -18,13 +18,13 @@ class First_Activity : AppCompatActivity() {
         connectView()
 
         btngotogame.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, StartGameActivity::class.java)
             startActivity(intent)
         }
 
 
         btnadd.setOnClickListener {
-            val intent = Intent(this, New_Celebrity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 

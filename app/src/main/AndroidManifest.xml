@@ -10,16 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HeadsUpPrep">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.StartGameActivity"
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"/>
+        <activity
+            android:name=".Activity.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".Update_Celebrity"
+            android:name=".Activity.Update_Celebrity"
             android:exported="true" />
         <activity
-            android:name=".New_Celebrity"
+            android:name=".Activity.New_Celebrity"
             android:exported="true" />
         <activity
-            android:name=".First_Activity"
+            android:name=".Activity.First_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
