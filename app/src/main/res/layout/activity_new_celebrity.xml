@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.New_Celebrity"
+    android:layout_margin="16dp"
+    >
+
+    <EditText
+        android:id="@+id/nameEd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/tabo1Ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="tabooo1"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/tabo2Ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="tabooo2"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/tabo3Ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="tabooo3"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/addNbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add New" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/back1Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Return" />
+    </LinearLayout>
+</LinearLayout>
