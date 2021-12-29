@@ -1,21 +1,26 @@
 package com.example.headsupprep.Activity
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.headsupprep.*
-import com.example.headsupprep.Model.CelebrityGame
+import com.example.headsupprep.Model.Celeb
+import com.example.headsupprep.Model.CelebItem
 import com.example.headsupprep.Resource.APIClinet
 import com.example.headsupprep.Resource.APIInterface
 import com.example.headsupprep.Resource.rvCelebrity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var editCelebrity: EditText
     lateinit var btnSub: Button
 
-    lateinit var arrayCeleb : ArrayList<CelebrityGame>
+    lateinit var arrayCeleb: ArrayList<CelebItem>
 
     var searcher = 0
 
@@ -43,8 +48,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnSub.setOnClickListener {
-            for(i in arrayCeleb){
-                if (i.name == editCelebrity.text.toString()){
+            for (i in arrayCeleb) {
+                if (i.name == editCelebrity.text.toString()) {
                     searcher = i.pk!!.toInt()
                 }
             }
@@ -54,7 +59,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadRV(){
+    //...
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menue, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_addCelebrity -> {
+                startGame(MainActivity())
+                return true
+            }
+            R.id.mueu_gotoPlay -> {
+                startGame(StartGameActivity())
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
+    private fun loadRV() {
         rvCeleb = findViewById(R.id.rvCeleb)
         arrayCeleb = arrayListOf()
         rvCeleb.adapter = rvCelebrity(arrayCeleb)
@@ -62,39 +88,42 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun connectView(){
+    private fun connectView() {
         editCelebrity = findViewById(R.id.edtCele)
         addCeleBtn = findViewById(R.id.addBtn)
         btnSub = findViewById(R.id.subBtn)
     }
 
 
-
-    private fun apiInterFace(){
+    private fun apiInterFace() {
         val apiInterface = APIClinet().getClinet()?.create(APIInterface::class.java)
-        val call: Call<List<CelebrityGame?>> = apiInterface!!.showInfo()
+        val call: Call<Celeb?>? = apiInterface!!.getCelebs()
 
-        call?.enqueue(object: Callback<List<CelebrityGame?>> {
-            override fun onResponse(call: Call<List<CelebrityGame?>>, response: Response<List<CelebrityGame?>>)
-            {
-                val resource: List<CelebrityGame?>? = response.body()// response.body() {information in API }
-                if (resource != null){
-                    for (i in resource){
-                        arrayCeleb.add(CelebrityGame(i!!.pk, i.name, i.taboo1, i.taboo2, i.taboo3))
+        call?.enqueue(object : Callback<Celeb?> {
+            override fun onResponse(call: Call<Celeb?>, response: Response<Celeb?>) {
+                val resource: List<CelebItem?>? =
+                    response.body()// response.body() {information in API }
+                if (resource != null) {
+                    for (i in resource) {
+                        arrayCeleb.add(CelebItem(i!!.pk, i.name, i.taboo1, i.taboo2, i.taboo3))
                         rvCeleb.adapter?.notifyDataSetChanged()
-                        rvCeleb.scrollToPosition(arrayCeleb.size-1)
+                        rvCeleb.scrollToPosition(arrayCeleb.size - 1)
                     }
                 }
             }
 
-            override fun onFailure(call: Call<List<CelebrityGame?>>, t: Throwable) {
+            override fun onFailure(call: Call<Celeb?>, t: Throwable) {
                 call.cancel()
-                Log.d("MainActivity","${t.message}")
+                Log.d("MainActivity", "${t.message}")
             }
         })
     }
 
 
+    private fun startGame(activity: Activity) {
+        val intent = Intent(this, activity::class.java)
+        startActivity(intent)
+    }
 
 
 }

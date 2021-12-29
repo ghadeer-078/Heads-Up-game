@@ -9,10 +9,16 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/HeadsUpPrep/app/src/main/res/layout/activity_start_game.xml" value="0.209375" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/HeadsUpPrep/app/src/main/res/layout/activity_update_celebrity.xml" value="0.1953125" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/HeadsUpPrep/app/src/main/res/layout/item_row.xml" value="0.209375" />
+        <entry key="..\:/Users/HUAWEI/StudioProjects/Heads-Up-game/app/src/main/res/layout/activity_first.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/HUAWEI/StudioProjects/Heads-Up-game/app/src/main/res/layout/activity_main.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/HUAWEI/StudioProjects/Heads-Up-game/app/src/main/res/layout/activity_new_celebrity.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/HUAWEI/StudioProjects/Heads-Up-game/app/src/main/res/layout/activity_start_game.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/HUAWEI/StudioProjects/Heads-Up-game/app/src/main/res/layout/activity_update_celebrity.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/HUAWEI/StudioProjects/Heads-Up-game/app/src/main/res/menu/menue.xml" value="0.30052083333333335" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

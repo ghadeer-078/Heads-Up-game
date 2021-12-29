@@ -1,22 +1,22 @@
 package com.example.headsupprep.Resource
 
 import com.example.headsupprep.Model.AddCelebrity
-import com.example.headsupprep.Model.CelebrityGame
+import com.example.headsupprep.Model.Celeb
+import com.example.headsupprep.Model.CelebItem
 import retrofit2.Call
 import retrofit2.http.*
 
 interface APIInterface {
 
-    @GET("/celebrities/")
-    fun showInfo(): Call <List<CelebrityGame?>>
-
     @POST("/celebrities/")
-    fun addInfo(@Body newUbring: AddCelebrity): Call<AddCelebrity>
+    fun addCeleb(@Body data: AddCelebrity): Call<CelebItem?>?
 
-    @PUT("/celebrities/{pk}")
-    fun updateInfo(@Path("pk") pk: Int, @Body updateUbring: CelebrityGame): Call<CelebrityGame>
+    @GET("/celebrities/")
+    fun getCelebs(): Call<Celeb?>?
 
-    @DELETE("/celebrities/{pk}")
-    fun deleteInfo(@Path("pk") pk: Int): Call<Void>
+    @PUT("/celebrities/{id}")
+    fun updateCeleb(@Path("id") id: Int, @Body celebData: CelebItem): Call<CelebItem>
 
+    @DELETE("/celebrities/{id}")
+    fun deleteCeleb(@Path("id") id: Int): Call<Void>?
 }

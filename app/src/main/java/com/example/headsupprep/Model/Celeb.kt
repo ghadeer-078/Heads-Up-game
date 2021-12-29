@@ -1,4 +1,4 @@
 package com.example.headsupprep.Model
 
 
-class Celeb : ArrayList<CelebrityGame>()
+class Celeb : ArrayList<CelebItem>()

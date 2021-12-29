@@ -30,7 +30,7 @@ class First_Activity : AppCompatActivity() {
 
     }
 
-    private fun connectView(){
+    private fun connectView() {
         btngotogame = findViewById(R.id.btGoGame)
         btnadd = findViewById(R.id.btAddCel)
     }

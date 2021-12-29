@@ -3,19 +3,21 @@ package com.example.headsupprep.Resource
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.headsupprep.Model.CelebrityGame
+import com.example.headsupprep.Model.CelebItem
 import com.example.headsupprep.databinding.ItemRowBinding
 
 
-class rvCelebrity(var arrayCeleb: ArrayList<CelebrityGame>) : RecyclerView.Adapter<rvCelebrity.ViewHolder>(){
-    class ViewHolder(var binding : ItemRowBinding) : RecyclerView.ViewHolder(binding.root)
+class rvCelebrity(var arrayCeleb: ArrayList<CelebItem>) :
+    RecyclerView.Adapter<rvCelebrity.ViewHolder>() {
+    class ViewHolder(var binding: ItemRowBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemRowBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
-                false)
+                false
+            )
         )
     }
 
